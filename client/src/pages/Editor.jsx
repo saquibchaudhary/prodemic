@@ -12,7 +12,7 @@ const Editor = () => {
   const handleFormSubmit = async (values) => {
     try {
       console.log(values);
-      const apiEndpoint = `http://localhost:3001/content`;
+      const apiEndpoint = `https://prodemic-ho3k.onrender.com/content`;
       const response = await fetch(apiEndpoint, {
         method: "POST",
         body: JSON.stringify(values),

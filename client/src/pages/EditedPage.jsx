@@ -5,7 +5,7 @@ const EditedPage = () => {
   const history = useNavigate();
   const location = useLocation();
   const { pathname } = location;
-  const api = `http://localhost:3001/content${pathname}`;
+  const api = `https://prodemic-ho3k.onrender.com/content${pathname}`;
 
   useEffect(() => {
     const fetchData = async () => {

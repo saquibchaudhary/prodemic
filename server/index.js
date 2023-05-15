@@ -8,6 +8,10 @@ import morgan from "morgan";
 import contentRoutes from "./routes/content.js";
 
 // Configuration
+// middleware
+const corsOptions = {
+  origin: "https://prodemic-client.onrender.com",
+};
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -16,7 +20,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors(corsOptions));
 
 // routes
 app.use("/content", contentRoutes);
